@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Inventory List</h1>
+    <p> This is the inventory list available along with their quantities.</p>
     <ul>
         {% for item in inventory %}
             <li>{{ item.item }} - Quantity: {{ item.quantity }}</li>
