@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -10,7 +11,8 @@ def index():
         {'item': 'Mouse', 'quantity': 25},
         {'item': 'Keyboard', 'quantity': 15}
     ]
-    return render_template('index.html', inventory=inventory)
+    last_updated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return render_template('index.html', inventory=inventory, last_updated=last_updated)
 
 
 if __name__ == '__main__':
